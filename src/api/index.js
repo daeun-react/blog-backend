@@ -1,13 +1,17 @@
-const Router = require('koa-router');
-const posts = require('./posts');
+// const Router = require('koa-router');
+// const posts = require('./posts');
+
+import Router from 'koa-router';
+import posts from './posts';
 
 const api = new Router();
-
-api.use('/posts', posts.routes());
 
 // api.get('/test', (ctx) => {
 //   ctx.body = 'test 성공';
 // });
 
-//라우터 내보내기
-module.exports = api;
+api.use('/posts', posts.routes());
+
+// module.exports = api;
+
+export default api;
