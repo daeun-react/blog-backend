@@ -1,6 +1,4 @@
-import mongoose from 'mongoose';
-
-const { Schema } = mongoose;
+import mongoose, { Schema } from 'mongoose';
 
 const PostSchema = new Schema({
   title: String,
@@ -9,6 +7,10 @@ const PostSchema = new Schema({
   pulishDate: {
     type: Date,
     default: Date.now,
+  },
+  user: {
+    _id: mongoose.Types.ObjectId,
+    username: String,
   },
 });
 
